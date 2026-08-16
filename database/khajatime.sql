@@ -87,5 +87,5 @@ CREATE TABLE order_items (
 -- Hash below is a real bcrypt hash of "1234" and works with PHP's password_verify()
 -- ---------------------------------------------------------------
 INSERT INTO users (full_name, email, pin, role, college_id) VALUES
-('Anil Shrestha', 'anil.shrestha@swsc.edu.np', '$2b$10$yazIbmIMoEKGYP1zKkD5oeN5BVGdoioDnof1oNSv5OhIqEf8YNxEq', 'student', 'SWC-2024-101'),
-('Kitchen Staff', 'kitchen@swsc.edu.np', '$2b$10$yazIbmIMoEKGYP1zKkD5oeN5BVGdoioDnof1oNSv5OhIqEf8YNxEq', 'kitchen', NULL);
+('Test Student', 'test@gmail.com', '$2b$10$yazIbmIMoEKGYP1zKkD5oeN5BVGdoioDnof1oNSv5OhIqEf8YNxEq', 'student', 'SWC-2024-101'),
+('Test Staff', 'kitchen@gmail.com', '$2b$10$yazIbmIMoEKGYP1zKkD5oeN5BVGdoioDnof1oNSv5OhIqEf8YNxEq', 'kitchen', NULL);
