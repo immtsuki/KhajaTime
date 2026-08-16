@@ -1,4 +1,4 @@
-# KhajaTime — School/College Cafeteria Ordering System
+# KhajaTime — School/College Cafeteria Management System
 
 A complete, framework-free PHP + MySQL web app for pre-ordering food at a school/college
 cafeteria: students order ahead and get a pickup token, kitchen staff manage the live menu
