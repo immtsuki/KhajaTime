@@ -55,3 +55,5 @@ include 'includes/header.php';
 <?php endif; ?>
 
 <?php include 'includes/footer.php'; ?>
+
+<script src="assets/js/theme-toggle.js"></script>

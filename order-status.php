@@ -77,3 +77,5 @@ include 'includes/header.php';
   }, 4000);
 </script>
 <?php endif; ?>
+
+<script src="assets/js/theme-toggle.js"></script>

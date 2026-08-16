@@ -4,6 +4,8 @@ A complete, framework-free PHP + MySQL web app for pre-ordering food at a school
 cafeteria: students order ahead and get a pickup token, kitchen staff manage the live menu
 and work an order queue.
 
+No frameworks, no Composer, no npm — just PHP, MySQL (mysqli), vanilla HTML/CSS/JS.
+
 ## Features
 
 **Students**
@@ -51,8 +53,8 @@ and work an order queue.
 
 | Role    | Email                          | PIN  |
 |---------|---------------------------------|------|
-| Student | test@gmail.com                  | 1234 |
-| Kitchen | kitchen@gmail.com               | 1234 |
+| Student | anil.shrestha@swsc.edu.np       | 1234 |
+| Kitchen | kitchen@swsc.edu.np             | 1234 |
 
 Or just register a new account from the login screen — the same page lets you toggle
 between "I'm a student" and "I'm kitchen staff".
@@ -82,3 +84,12 @@ khajatime/
 ├── kitchen-queue.php           # kitchen: order queue
 └── kitchen-menu.php            # kitchen: menu manager
 ```
+
+## Notes
+
+- PINs are stored hashed with PHP's `password_hash()` — never in plain text.
+- Order status updates on the student's screen via polling every 4 seconds; no
+  WebSocket/SSE setup needed for XAMPP.
+- Tokens reset daily and start at #1 each day (matches how a real pickup counter works).
+- Everything is plain PHP with `mysqli` prepared statements — no ORM, no framework,
+  no build step. Just drop it in `htdocs` and go.

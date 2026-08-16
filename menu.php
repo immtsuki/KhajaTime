@@ -95,3 +95,5 @@ include 'includes/header.php';
 <?php include 'includes/footer.php'; ?>
 
 <script src="assets/js/menu.js"></script>
+
+<script src="assets/js/theme-toggle.js"></script>

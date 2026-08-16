@@ -36,3 +36,5 @@ include 'includes/header.php';
 </div>
 
 <?php include 'includes/footer.php'; ?>
+
+<script src="assets/js/theme-toggle.js"></script>

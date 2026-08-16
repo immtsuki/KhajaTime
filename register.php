@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <header class="topnav">
     <div class="topnav-inner">
       <a href="index.php" class="brand">
-        <span class="brand-mark">🍲</span>
+        <!-- <span class="brand-mark">🍲</span> -->
         <span class="brand-text"><span class="khaja">Khaja</span><span class="time">Time</span></span>
       </a>
     </div>
@@ -77,8 +77,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   <main class="content">
     <div class="auth-wrap">
-      <div class="auth-logo">🍲</div>
-      <div class="auth-kicker">खाजा</div>
+      <!-- <div class="auth-logo">🍲</div> -->
+      <!-- <div class="auth-kicker">खाजा</div> -->
       <h1 class="auth-title"><span class="serif">Khaja</span><span class="time">Time</span></h1>
       <p class="auth-sub">create your account</p>
 
@@ -97,14 +97,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
           <div class="field">
             <label for="full_name">Full name</label>
-            <input type="text" class="plain-input" name="full_name" id="full_name" placeholder="e.g. Anil Shrestha" required value="<?php echo e($fullName); ?>">
+            <input type="text" class="plain-input" name="full_name" id="full_name" placeholder="e.g. Full Name" required value="<?php echo e($fullName); ?>">
           </div>
 
           <div class="field">
             <label for="email">Email</label>
             <div class="input-wrap">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 6l-10 7L2 6"/><path d="M2 6h20v12H2z"/></svg>
-              <input type="email" name="email" id="email" placeholder="anil.shrestha@swsc.edu.np" required value="<?php echo e($email); ?>">
+              <input type="email" name="email" id="email" placeholder="example@gmail.com" required value="<?php echo e($email); ?>">
             </div>
           </div>
 
@@ -153,5 +153,6 @@ function toggleCollegeField() {
 }
 toggleCollegeField();
 </script>
+<script src="assets/js/theme-toggle.js"></script>
 </body>
 </html>

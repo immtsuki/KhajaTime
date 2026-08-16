@@ -67,3 +67,5 @@ include 'includes/header.php';
 <?php include 'includes/footer.php'; ?>
 
 <script src="assets/js/kitchen-queue.js"></script>
+
+<script src="assets/js/theme-toggle.js"></script>

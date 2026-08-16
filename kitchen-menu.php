@@ -6,6 +6,37 @@ requireRole('kitchen');
 
 $pageTitle = 'Kitchen Menu Manager';
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'delete_item') {
+    $itemId = (int) ($_POST['item_id'] ?? 0);
+
+    if ($itemId > 0) {
+        $image = '';
+        $imageStmt = mysqli_prepare($conn, "SELECT image FROM menu_items WHERE id = ? LIMIT 1");
+        mysqli_stmt_bind_param($imageStmt, 'i', $itemId);
+        mysqli_stmt_execute($imageStmt);
+        $imageRow = mysqli_fetch_assoc(mysqli_stmt_get_result($imageStmt));
+        if ($imageRow) {
+            $image = $imageRow['image'] ?? '';
+        }
+
+        $deleteStmt = mysqli_prepare($conn, "DELETE FROM menu_items WHERE id = ?");
+        mysqli_stmt_bind_param($deleteStmt, 'i', $itemId);
+        mysqli_stmt_execute($deleteStmt);
+
+        if ($image && strpos($image, 'http://') !== 0 && strpos($image, 'https://') !== 0) {
+            $relative = ltrim(str_replace(['/', '\\'], DIRECTORY_SEPARATOR, $image), DIRECTORY_SEPARATOR);
+            $filePath = __DIR__ . DIRECTORY_SEPARATOR . $relative;
+            if (is_file($filePath)) {
+                @unlink($filePath);
+            }
+        }
+    }
+
+    header('Location: kitchen-menu.php');
+    exit;
+}
+
+
 $categories = [];
 $catResult = mysqli_query($conn, "SELECT id, name FROM categories ORDER BY name");
 while ($row = mysqli_fetch_assoc($catResult)) {
@@ -51,6 +82,7 @@ include 'includes/header.php';
             <th>Category</th>
             <th>Available</th>
             <th>Edit</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -83,6 +115,15 @@ include 'includes/header.php';
                 <button class="edit-icon-btn edit-item-btn" title="Edit">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
                 </button>
+              </td>
+              <td>
+                <form method="POST" onsubmit="return confirm('Delete this menu item? This cannot be undone.');" style="margin:0;">
+                  <input type="hidden" name="action" value="delete_item">
+                  <input type="hidden" name="item_id" value="<?php echo (int)$item['id']; ?>">
+                  <button type="submit" class="edit-icon-btn" title="Delete" style="color:#c0392b;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v5"/><path d="M14 11v5"/><path d="M9 6V4h6v2"/></svg>
+                  </button>
+                </form>
               </td>
             </tr>
           <?php endforeach; ?>

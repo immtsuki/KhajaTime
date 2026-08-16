@@ -3,8 +3,7 @@
    ========================================================== */
 
 :root {
-  --primary: #8385f0;
-  --primary-dark: #6d6fe0;
+  --primary: #F6AE2D;
   --primary-light: #eef0fd;
   --primary-lighter: #f5f6fe;
   --ink: #1e2233;
@@ -901,4 +900,291 @@ h1.page-title { font-size: 1.4rem; margin: 0 0 20px; }
 @media (max-width: 640px) {
   .content { padding: 20px 0 100px; }
   .container { padding: 0 16px; }
+}
+
+/* ==========================================================
+   KhajaTime — Dark / Light theme
+   The primary yellow stays unchanged in both themes.
+   ========================================================== */
+
+:root {
+  --primary-dark: #d99116;
+  --surface: #ffffff;
+  --surface-soft: #f5f6fe;
+  --input-bg: #ffffff;
+  --muted-surface: #f3f4f6;
+}
+
+html {
+  background: var(--bg);
+  transition: background-color 0.2s ease;
+}
+
+body,
+.topnav,
+.food-card,
+.order-card,
+.order-summary-box,
+.history-item,
+.queue-card,
+.panel,
+.account-card,
+.cart-bar,
+.back-btn,
+.icon-btn,
+.btn-outline,
+.input-wrap input,
+.input-wrap select,
+.plain-input,
+.search-wrap input,
+.pill {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Dark theme variables */
+html[data-theme="dark"] {
+  --ink: #f3f4f6;
+  --gray: #a7adba;
+  --gray-light: #7d8491;
+  --border: #303642;
+  --white: #171a21;
+  --bg: #101217;
+  --surface: #171a21;
+  --surface-soft: #20242d;
+  --primary-light: #332d1d;
+  --primary-lighter: #24221c;
+  --input-bg: #1b1f27;
+  --muted-surface: #242830;
+  --green-bg: #123326;
+  --green-text: #34d399;
+  --red-bg: #351c1f;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.28), 0 1px 2px rgba(0, 0, 0, 0.22);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme="dark"] body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+/* Surfaces */
+html[data-theme="dark"] .auth-card,
+html[data-theme="dark"] .status-card {
+  background: var(--primary-lighter);
+  border-color: var(--primary-light);
+}
+
+html[data-theme="dark"] .status-card.ready {
+  background: #10271e;
+  border-color: #1d5a42;
+}
+
+html[data-theme="dark"] .food-card,
+html[data-theme="dark"] .order-card,
+html[data-theme="dark"] .order-summary-box,
+html[data-theme="dark"] .history-item,
+html[data-theme="dark"] .queue-card,
+html[data-theme="dark"] .panel,
+html[data-theme="dark"] .account-card,
+html[data-theme="dark"] .cart-bar,
+html[data-theme="dark"] .topnav {
+  background: var(--surface);
+}
+
+html[data-theme="dark"] .order-line,
+html[data-theme="dark"] .upload-box {
+  background: var(--surface-soft);
+}
+
+/* Navigation */
+html[data-theme="dark"] .topnav {
+  border-color: var(--border);
+}
+
+html[data-theme="dark"] .brand-text .khaja,
+html[data-theme="dark"] .nav-link,
+html[data-theme="dark"] .queue-name,
+html[data-theme="dark"] .food-card-name,
+html[data-theme="dark"] .order-line-name,
+html[data-theme="dark"] .account-row .v,
+html[data-theme="dark"] .panel h2,
+html[data-theme="dark"] .km-header h1,
+html[data-theme="dark"] .queue-header h1,
+html[data-theme="dark"] .order-review-title h1,
+html[data-theme="dark"] h1.page-title,
+html[data-theme="dark"] .auth-title {
+  color: var(--ink);
+}
+
+html[data-theme="dark"] .nav-link {
+  color: var(--gray);
+}
+
+html[data-theme="dark"] .nav-link.active {
+  color: var(--primary);
+}
+
+html[data-theme="dark"] .nav-links.open {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+/* Inputs and controls */
+html[data-theme="dark"] .input-wrap input,
+html[data-theme="dark"] .input-wrap select,
+html[data-theme="dark"] .plain-input,
+html[data-theme="dark"] .search-wrap input,
+html[data-theme="dark"] .pill,
+html[data-theme="dark"] .back-btn,
+html[data-theme="dark"] .icon-btn,
+html[data-theme="dark"] .btn-outline {
+  background: var(--input-bg);
+  color: var(--ink);
+  border-color: var(--border);
+}
+
+html[data-theme="dark"] .input-wrap input::placeholder,
+html[data-theme="dark"] .plain-input::placeholder,
+html[data-theme="dark"] .search-wrap input::placeholder {
+  color: var(--gray-light);
+}
+
+html[data-theme="dark"] .pill {
+  color: var(--gray);
+}
+
+html[data-theme="dark"] .pill.active,
+html[data-theme="dark"] .btn-primary,
+html[data-theme="dark"] .add-btn,
+html[data-theme="dark"] .role-toggle input:checked + label,
+html[data-theme="dark"] .switch input:checked + .slider {
+  background: var(--primary);
+}
+
+html[data-theme="dark"] .btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+html[data-theme="dark"] .btn-outline:hover,
+html[data-theme="dark"] .icon-btn:hover,
+html[data-theme="dark"] .back-btn:hover {
+  border-color: var(--primary);
+}
+
+/* Tables / kitchen manager */
+html[data-theme="dark"] table.menu-table th,
+html[data-theme="dark"] table.menu-table td,
+html[data-theme="dark"] .subtotal-row,
+html[data-theme="dark"] .km-tabs,
+html[data-theme="dark"] .account-row {
+  border-color: var(--border);
+}
+
+html[data-theme="dark"] .switch .slider {
+  background-color: #3a404b;
+}
+
+html[data-theme="dark"] .switch .slider::before {
+  background: #f3f4f6;
+}
+
+html[data-theme="dark"] .badge-soldout {
+  background: var(--muted-surface);
+  color: var(--gray-light);
+}
+
+html[data-theme="dark"] .add-btn:disabled {
+  background: #343943;
+  color: #737986;
+}
+
+/* Status / alerts */
+html[data-theme="dark"] .status-pill.preparing {
+  background: #3b2819;
+  color: #fb923c;
+}
+
+html[data-theme="dark"] .status-pill.ready,
+html[data-theme="dark"] .ready-banner {
+  background: var(--green-bg);
+  color: var(--green-text);
+}
+
+html[data-theme="dark"] .alert-error {
+  background: var(--red-bg);
+  color: #fca5a5;
+}
+
+html[data-theme="dark"] .alert-success {
+  background: var(--green-bg);
+  color: var(--green-text);
+}
+
+/* Theme toggle */
+.theme-toggle {
+  width: 42px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.05s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.theme-toggle:active { transform: scale(0.96); }
+.theme-toggle svg { width: 18px; height: 18px; }
+.theme-toggle .sun-icon { display: none; }
+html[data-theme="dark"] .theme-toggle .moon-icon { display: none; }
+html[data-theme="dark"] .theme-toggle .sun-icon { display: block; }
+
+/* On the auth screens there is no full nav, so the toggle can sit at the top-right. */
+.theme-toggle-floating {
+  position: fixed;
+  top: 14px;
+  right: 18px;
+  z-index: 100;
+}
+
+@media (max-width: 720px) {
+  .theme-toggle { width: 38px; height: 34px; }
+  .theme-toggle-floating { top: 12px; right: 12px; }
+}
+
+/* ---------------- Global dark/light toggle ---------------- */
+.kt-theme-toggle {
+  position: fixed;
+  top: 14px;
+  right: 18px;
+  z-index: 9999;
+  min-width: 92px;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font: 600 13px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(0,0,0,.10);
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .05s ease;
+}
+.kt-theme-toggle:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-1px); }
+.kt-theme-toggle:active { transform: translateY(0) scale(.98); }
+
+@media (max-width: 720px) {
+  .kt-theme-toggle { top: 10px; right: 10px; min-width: 82px; height: 34px; padding: 0 10px; font-size: 12px; }
 }
