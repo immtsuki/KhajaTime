@@ -51,8 +51,8 @@ and work an order queue.
 
 | Role    | Email                          | PIN  |
 |---------|---------------------------------|------|
-| Student | anil.shrestha@swsc.edu.np       | 1234 |
-| Kitchen | kitchen@swsc.edu.np             | 1234 |
+| Student | test@gmail.com                  | 1234 |
+| Kitchen | kitchen@gmail.com               | 1234 |
 
 Or just register a new account from the login screen — the same page lets you toggle
 between "I'm a student" and "I'm kitchen staff".
