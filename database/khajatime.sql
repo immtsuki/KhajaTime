@@ -43,16 +43,10 @@ CREATE TABLE menu_items (
 ) ENGINE=InnoDB;
 
 INSERT INTO menu_items (name, price, category_id, image, available) VALUES
-('Veg Momo', 120, 2, NULL, 1),
+('Momo', 120, 2, NULL, 1),
 ('Chiya', 30, 7, NULL, 1),
 ('Fried Rice', 150, 1, NULL, 1),
-('Samosa', 40, 2, NULL, 0),
-('Thakali Set', 350, 5, NULL, 1),
-('Mango Lassi', 90, 7, NULL, 1),
-('Chicken Momo', 150, 2, NULL, 1),
-('Veg Chowmein', 130, 4, NULL, 1),
-('Masala Tea', 35, 7, NULL, 1),
-('Sel Roti', 50, 6, NULL, 1);
+('Samosa', 40, 2, NULL, 0);
 
 -- ---------------------------------------------------------------
 -- Orders
